@@ -46,6 +46,13 @@ export async function GET() {
         }
         number
       }
+      featureTrainings {
+        heading
+        image {
+          url
+        }
+        description
+      }
     }
   `;
 

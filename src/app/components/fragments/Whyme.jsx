@@ -10,7 +10,6 @@ import CardWhyMe from "../elements/CardWhyMe";
 const WhyMeSection = ({ whyMes }) => {
   const [number, setNumber] = useState(6);
   const [show, setShow] = useState(false);
-  console.log(window.innerWidth);
 
   useEffect(() => {
     const handleResize = () => {
@@ -53,14 +52,14 @@ const WhyMeSection = ({ whyMes }) => {
                   key={index}
                   {...item}
                   backgroundColor={
-                    window.innerWidth <= 986
+                    window?.innerWidth <= 986
                       ? "#5DBBF1"
                       : index === 1 || index === 2 || index === 5
                       ? "#245EC2"
                       : "#A4D7F4"
                   }
                   textColor={
-                    window.innerWidth <= 986
+                    window?.innerWidth <= 986
                       ? "#0E5075"
                       : index === 1 || index === 2 || index === 5
                       ? "white"

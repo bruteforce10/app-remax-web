@@ -16,3 +16,7 @@
 .modal-box {
   padding: 0px !important;
 }
+
+div.collapse-title.text-xl.font-medium::after {
+  color: #245ec2 !important;
+}
