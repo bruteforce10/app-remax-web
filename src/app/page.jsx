@@ -1,9 +1,13 @@
 import About from "./components/fragments/About";
+import ActionSection from "./components/fragments/ActionSection";
 import BankPartners from "./components/fragments/BankPartners";
+import Footer from "./components/fragments/Footer";
 import Header from "./components/fragments/Header";
 import Navbar from "./components/fragments/Navbar";
 import NavbarTop from "./components/fragments/NavbarTop";
+import TestimonialSection from "./components/fragments/TestimonialSection";
 import TrainingSection from "./components/fragments/TrainingSection";
+import VideosSection from "./components/fragments/VideosSection";
 import WhyMeSection from "./components/fragments/Whyme";
 
 async function getData() {
@@ -20,7 +24,7 @@ async function getData() {
 
 export default async function Home() {
   const data = await getData();
-  console.log(data.data);
+
   return (
     <main className="min-h-screen">
       <div className="top-0 z-[99] sticky ">
@@ -32,6 +36,12 @@ export default async function Home() {
       <BankPartners {...data.data} />
       <WhyMeSection {...data.data} />
       <TrainingSection {...data.data} />
+      <VideosSection />
+      <ActionSection {...data.data} />
+      <TestimonialSection {...data.data} />
+      <div className="w-full bg-[#014389]">
+        <Footer />
+      </div>
     </main>
   );
 }

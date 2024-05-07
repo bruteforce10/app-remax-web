@@ -1,56 +1,63 @@
+"use client";
 import React from "react";
 import HeadingText from "../elements/HeadingText";
 import Accordion from "../elements/Accordion";
+import Image from "next/image";
+import { MyContext } from "@/lib/AppContext";
+import useSectionView from "@/lib/hook";
 
 const TrainingSection = ({ featureTrainings }) => {
+  const { accordion } = MyContext();
+  const imageOne = featureTrainings.filter((item) => item?.idSort == accordion);
+  const { ref } = useSectionView("WHY RE/MAX");
+
   return (
-    <section className=" py-20 relative overflow-hidden">
+    <section id="training" ref={ref} className=" py-20  ">
       <div className="container max-w-[1250px] mx-auto ">
         <div className="text-center space-y-3">
           <HeadingText text={"Pelatihan"} highlight={"Awal"} />
           <div className="w-20 h-0.5 rounded-full bg-blue-remax max-lg:mx-auto max-lg:mt-2 mx-auto"></div>
         </div>
-        <div className="grid grid-cols-2 justify-center gap-6  mt-8 bg-red-50">
-          <div className="join join-vertical w-full mt-12">
+        <div className="flex justify-center flex-wrap gap-8  mt-12 ">
+          <div className="join join-vertical max-w-[28rem] ">
             {featureTrainings.map((item, index) => (
               <Accordion
                 key={index}
                 heading={item?.heading}
                 description={item?.description}
+                idSort={item?.idSort}
               />
             ))}
           </div>
 
-          <div className="grid gap-4 max-w-96">
-            <div>
-              <img
-                className="h-auto max-w-96 rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg"
-                alt=""
+          <div className="grid gap-4 max-w-[28rem] lg:max-w-96   ">
+            <div className="max-h-[250px] overflow-hidden rounded-lg">
+              <Image
+                className="-mt-8 w-full "
+                src={imageOne[0]?.image?.url}
+                width={800}
+                height={100}
+                alt="bootcam-remax"
               />
             </div>
-            <div className="grid grid-cols-3 gap-4">
-              <div>
-                <img
-                  className="h-auto  rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  className="h-auto  rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  className="h-auto  rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
-                  alt=""
-                />
-              </div>
+            <div className="grid grid-cols-2 gap-4">
+              {featureTrainings.map(
+                (item, index) =>
+                  item?.idSort != imageOne[0]?.idSort && (
+                    <div
+                      key={index}
+                      className="max-h-[100px] overflow-hidden rounded-lg "
+                    >
+                      <Image
+                        className="h-auto w-full -mt-4"
+                        src={item?.image?.url}
+                        width={800}
+                        height={100}
+                        alt="bootcam-remax"
+                      />
+                    </div>
+                  )
+              )}
             </div>
           </div>
         </div>

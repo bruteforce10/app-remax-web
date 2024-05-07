@@ -11,8 +11,8 @@ const About = ({ abouts }) => {
 
   return (
     <section
-      id="about"
-      className="py-20 max-lg:pt-0 max-lg:-mt-12 max-md:mt-[-24px] container max-w-[1250px] px-8 mx-auto max-xl:gap-x-36 gap-y-8 grid grid-cols-1 max-lg:text-center lg:grid-cols-2"
+      id="ABOUT US"
+      className="py-20 scroll-mt-24 max-lg:pt-0 max-lg:-mt-12 max-md:mt-[-24px] container max-w-[1250px] px-8 mx-auto max-xl:gap-x-36 gap-y-8 grid grid-cols-1 max-lg:text-center lg:grid-cols-2"
     >
       <AboutImg />
       <div ref={ref} className="space-y-8 max-lg:mt-8 max-sm:mt-0">

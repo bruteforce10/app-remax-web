@@ -31,7 +31,7 @@ const WhyMeSection = ({ whyMes }) => {
   );
 
   return (
-    <section className="bg-[#EEF8FE] py-20 relative overflow-hidden">
+    <section id="whyMe" className="bg-[#EEF8FE] py-20 relative overflow-hidden">
       <Image
         src="/remax-balon.webp"
         alt="remax-balon"

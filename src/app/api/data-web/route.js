@@ -52,6 +52,15 @@ export async function GET() {
           url
         }
         description
+        idSort
+      }
+      testimonis {
+        job
+        name
+        avatar {
+          url
+        }
+        description
       }
     }
   `;

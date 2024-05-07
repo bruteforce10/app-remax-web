@@ -13,7 +13,11 @@ const BankPartners = ({ bankPartners }) => {
   const { ref } = useSectionView("WHY RE/MAX");
 
   return (
-    <section ref={ref} className="bg-[#EEF8FE] pt-20">
+    <section
+      id="WHY RE/MAX"
+      ref={ref}
+      className="bg-[#EEF8FE] pt-20 -scroll-mt-48"
+    >
       <div className="container max-w-[1250px] mx-auto px-8 pb-8 max-sm:text-center whitespace-nowrap">
         <HeadingText text={"RE/MAX"} highlight={"Partner"} />
         <div className="w-20 h-0.5 rounded-full bg-blue-remax max-lg:mx-auto max-lg:mt-2 mx-auto sm:hidden"></div>

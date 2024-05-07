@@ -13,7 +13,10 @@ const Header = ({ headers }) => {
   const { ref } = useSectionView("HOME");
 
   return (
-    <header className="max-lg:bg-gradient-to-b from-[#EEF8FE] to-white bg-[#EEF8FE]">
+    <header
+      id="HOME"
+      className="max-lg:bg-gradient-to-b from-[#EEF8FE] to-white bg-[#EEF8FE] scroll-mt-28"
+    >
       <div
         ref={ref}
         className="container px-8 mx-auto py-20 max-md:py-14 max-w-[1250px] items-center grid grid-cols-1 gap-y-12 max-lg:justify-items-center lg:grid-cols-2 justify-items-end "

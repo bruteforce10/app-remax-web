@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .swiper-pagination-bullet {
   background-color: #ffffff !important;
 }
@@ -19,4 +23,13 @@
 
 div.collapse-title.text-xl.font-medium::after {
   color: #245ec2 !important;
+}
+
+.underline-costum {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  text-decoration-style: solid;
+  text-decoration-color: #a4d7f4;
+  border-radius: 105px;
 }

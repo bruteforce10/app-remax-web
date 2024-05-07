@@ -47,7 +47,7 @@ const Navbar = ({ menus }) => {
                     "font-bold border-b-2 border-blue-remax"
                 )}
               >
-                <a>{item?.menu}</a>
+                <a href={`#${item?.menu}`}>{item?.menu}</a>
               </li>
             ))}
           </ul>
@@ -82,7 +82,7 @@ const Navbar = ({ menus }) => {
                     "font-bold border-b-2 border-blue-remax py-2"
                 )}
               >
-                <a>{item?.menu}</a>
+                <a href={`#${item?.menu}`}>{item?.menu}</a>
               </li>
             ))}
           </ul>
