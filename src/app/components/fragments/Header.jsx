@@ -1,9 +1,14 @@
 "use client";
 import React from "react";
 import Montserratt from "@/services/FontPremier";
-// import ImgHeader from "../elements/ImgHeader";
 import useSectionView from "@/lib/hook";
-import ImgHeader from "../elements/ImgHeader";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
+import Image from "next/image";
 
 const Header = ({ headers }) => {
   const { heading, description, subHeading } = headers[0];
@@ -36,7 +41,71 @@ const Header = ({ headers }) => {
             dangerouslySetInnerHTML={{ __html: description?.html }}
           ></div>
         </div>
-        <ImgHeader />
+        <div className="flex flex-col justify-center items-center gap-4 w-fit max-sm:scale-100 scale-105 origin-bottom ">
+          <div className="flex gap-4 justify-center items-end max-lg:hidden">
+            <Image
+              src={"/img-header.webp"}
+              width={500}
+              className="w-full h-auto max-w-[230px]  object-contain"
+              height={100}
+              alt="img-header"
+              priority={true}
+              quality={100}
+            />
+            <Swiper
+              className="w-[200px]"
+              slidesPerView={1}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              spaceBetween={10}
+              pagination={true}
+              modules={[Autoplay, Pagination, Navigation]}
+              navigation={true}
+            >
+              <SwiperSlide>
+                {" "}
+                <div
+                  className={` rounded-xl w-[200px] h-[200px] flex flex-col items-center justify-center bg-red-remax text-white ${Montserratt.className} space-y-2`}
+                >
+                  <h5
+                    className={`text-7xl font-extrabold ${Montserratt.className}`}
+                  >
+                    115+
+                  </h5>
+                  <p className="text-center leading-[-20px] w-[180px]">
+                    Memiliki Cabang Di berbagai negara
+                  </p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div
+                  className={` rounded-xl w-[200px] h-[200px] flex flex-col items-center justify-center bg-blue-remax text-white ${Montserratt.className} space-y-2`}
+                >
+                  <h5
+                    className={`text-7xl font-extrabold ${Montserratt.className}`}
+                  >
+                    50+
+                  </h5>
+                  <p className="text-center leading-[-20px] w-[180px]">
+                    Tahun Berpengalaman
+                  </p>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+          <Image
+            src={"/img-header-second.webp"}
+            width={500}
+            className="w-full h-auto max-w-[450px] max-lg:max-w-[550px]  object-contain"
+            height={100}
+            alt="img-header"
+            priority={true}
+            quality={100}
+          />
+        </div>
       </div>
     </header>
   );
