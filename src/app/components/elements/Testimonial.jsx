@@ -9,7 +9,7 @@ const Testimonial = ({ job, name, description }) => {
   return (
     <div>
       <blockquote>
-        <p class="text-xl font-semibold leading-relaxed text-gray-900  min-h-[8rem] dark:text-white">
+        <p className="text-xl font-semibold leading-relaxed text-gray-900  min-h-[8rem] dark:text-white">
           &quot;{description}&quot;
         </p>
       </blockquote>

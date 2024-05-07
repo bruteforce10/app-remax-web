@@ -21,10 +21,9 @@ const VideosSection = () => {
           className="mx-auto rounded-xl max-md:w-full"
           src="https://www.youtube.com/embed/u-FEUO1PyIE?si=9v4p11bnzzLLF4up"
           title="YouTube video player"
-          frameborder="3"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
         ></iframe>
       </div>
     </section>
