@@ -1,9 +1,16 @@
+"use client";
 import React from "react";
 import IconTextName from "../elements/IconTextName";
+import { motion } from "framer-motion";
 
 const NavbarTop = ({ topNavigations }) => {
   return (
-    <div className="bg-blue-remax h-10 flex items-center  ">
+    <motion.div
+      initial={{ opacity: 0, y: -300 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+      className="bg-blue-remax h-10 flex items-center  "
+    >
       <div className="container mx-auto max-sm:justify-center sm:px-8 flex divide-x-2 max-w-[1250px]">
         {topNavigations.map((item, index) => (
           <IconTextName
@@ -13,7 +20,7 @@ const NavbarTop = ({ topNavigations }) => {
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -5,6 +5,7 @@ import Accordion from "../elements/Accordion";
 import Image from "next/image";
 import { MyContext } from "@/lib/AppContext";
 import useSectionView from "@/lib/hook";
+import { motion } from "framer-motion";
 
 const TrainingSection = ({ featureTrainings }) => {
   const { accordion } = MyContext();
@@ -19,7 +20,13 @@ const TrainingSection = ({ featureTrainings }) => {
           <div className="w-20 h-0.5 rounded-full bg-blue-remax max-lg:mx-auto max-lg:mt-2 mx-auto"></div>
         </div>
         <div className="flex justify-center flex-wrap gap-8  mt-12 ">
-          <div className="join join-vertical max-w-[28rem] ">
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="join join-vertical max-w-[28rem] "
+          >
             {featureTrainings.map((item, index) => (
               <Accordion
                 key={index}
@@ -28,7 +35,7 @@ const TrainingSection = ({ featureTrainings }) => {
                 idSort={item?.idSort}
               />
             ))}
-          </div>
+          </motion.div>
 
           <div className="grid gap-4 max-w-[28rem] lg:max-w-96   ">
             <div className="max-h-[250px] overflow-hidden rounded-lg">
