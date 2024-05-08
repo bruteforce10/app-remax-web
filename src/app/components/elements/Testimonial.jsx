@@ -3,7 +3,7 @@ import Montserratt from "@/services/FontPremier";
 import Image from "next/image";
 import React from "react";
 
-const Testimonial = ({ job, name, description }) => {
+const Testimonial = ({ job, name, description, avatar }) => {
   const { page, setPage, valueTesti } = MyContext();
 
   return (

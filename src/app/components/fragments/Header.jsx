@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Montserratt from "@/services/FontPremier";
 import useSectionView from "@/lib/hook";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { FaArrowUp } from "react-icons/fa6";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -16,6 +17,18 @@ const Header = ({ headers }) => {
   const subHeadingText = subHeading.slice(0, 30);
   const subHeadingHighlight = subHeading.slice(31, 53);
   const { ref } = useSectionView("HOME");
+  const [isShow, setShow] = React.useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 768) {
+        setShow(true);
+      } else {
+        setShow(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
@@ -106,6 +119,21 @@ const Header = ({ headers }) => {
             quality={100}
           />
         </div>
+      </div>
+      <div
+        onClick={() => {
+          {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+              duration: 500,
+            });
+          }
+        }}
+        style={{ display: isShow ? "block" : "none" }}
+        className="fixed bottom-28 z-[99] right-16 max-sm:right-8 cursor-pointer  bg-[#ffffff] p-4 rounded-full shadow-md"
+      >
+        <FaArrowUp size={24} className="text-gray-700" />
       </div>
     </header>
   );

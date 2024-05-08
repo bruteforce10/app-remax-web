@@ -33,7 +33,7 @@ const TrainingSection = ({ featureTrainings }) => {
           <div className="grid gap-4 max-w-[28rem] lg:max-w-96   ">
             <div className="max-h-[250px] overflow-hidden rounded-lg">
               <Image
-                className="-mt-8 w-full "
+                className="-mt-8 max-sm:-mt-16 w-full "
                 src={imageOne[0]?.image?.url}
                 width={800}
                 height={100}
@@ -49,7 +49,7 @@ const TrainingSection = ({ featureTrainings }) => {
                       className="max-h-[100px] overflow-hidden rounded-lg "
                     >
                       <Image
-                        className="h-auto w-full -mt-4"
+                        className="h-auto w-full -mt-4 max-sm:-mt-12"
                         src={item?.image?.url}
                         width={800}
                         height={100}

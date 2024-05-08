@@ -6,6 +6,7 @@ import Testimonial from "../elements/Testimonial";
 import { MyContext } from "@/lib/AppContext";
 
 const TestimonialSection = ({ testimonis }) => {
+  console.log(testimonis);
   const { page, setValueTesti, setPage, valueTesti } = MyContext();
 
   useEffect(() => {

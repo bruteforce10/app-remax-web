@@ -22,7 +22,7 @@ module.exports = {
         "red-remax": "#E11C2C",
         "blue-remax-2": "#007DC3",
         tersier: "#F6F7F9",
-        base: "##6694C4",
+        base: "#6694C4",
       },
     },
   },
