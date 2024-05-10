@@ -3,6 +3,7 @@ import React from "react";
 import AboutImg from "../elements/AboutImg";
 import HeadingText from "../elements/HeadingText";
 import useSectionView from "@/lib/hook";
+import { motion } from "framer-motion";
 
 const About = ({ abouts }) => {
   const { heading, headingHighligt, description } = abouts[0];
@@ -16,14 +17,23 @@ const About = ({ abouts }) => {
     >
       <AboutImg />
       <div ref={ref} className="space-y-8 max-lg:mt-8 max-sm:mt-0">
-        <div>
+        <motion.div
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          initial={{ opacity: 0, x: -100 }}
+          transition={{ duration: 0.5 }}
+        >
           <HeadingText text={heading} highlight={headingHighligt} />
           <div className="w-16 h-0.5 rounded-full bg-blue-remax max-lg:mx-auto max-lg:mt-2"></div>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          initial={{ opacity: 0, y: -100 }}
+          transition={{ duration: 0.5 }}
           className="leading-relaxed max-lg:max-w-[40rem] max-lg:mx-auto"
           dangerouslySetInnerHTML={{ __html: description?.html }}
-        ></div>
+        ></motion.div>
       </div>
     </section>
   );

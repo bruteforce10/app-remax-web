@@ -10,9 +10,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Header = ({ headers }) => {
   const { heading, description, subHeading } = headers[0];
+
+  const headingSplit = heading.split(" ");
 
   const subHeadingText = subHeading.slice(0, 30);
   const subHeadingHighlight = subHeading.slice(31, 53);
@@ -30,8 +33,28 @@ const Header = ({ headers }) => {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
+  const variantHeader = {
+    hidden: {
+      opacity: 0,
+      x: -100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 2,
+        type: "spring",
+        delay: 0.5,
+        when: "beforeChildren",
+      },
+    },
+  };
+
   return (
-    <header
+    <motion.header
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
       id="HOME"
       className="max-lg:bg-gradient-to-b from-[#EEF8FE] to-white bg-[#EEF8FE] scroll-mt-28"
     >
@@ -45,10 +68,10 @@ const Header = ({ headers }) => {
           >
             {heading}
           </h1>
-          <p className={`${Montserratt.className} text-2xl max-md:text-xl`}>
+          <h3 className={`${Montserratt.className} text-2xl max-md:text-xl`}>
             {subHeadingText} <br />
             <span className="font-bold ">{subHeadingHighlight}</span>{" "}
-          </p>
+          </h3>
           <div
             className="max-w-xl text-lg max-md:text-md mx-auto "
             dangerouslySetInnerHTML={{ __html: description?.html }}
@@ -135,7 +158,7 @@ const Header = ({ headers }) => {
       >
         <FaArrowUp size={24} className="text-gray-700" />
       </div>
-    </header>
+    </motion.header>
   );
 };
 

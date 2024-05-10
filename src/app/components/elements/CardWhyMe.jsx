@@ -1,6 +1,8 @@
 import Montserratt from "@/services/FontPremier";
+import { useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
+import { motion } from "framer-motion";
 
 const CardWhyMe = ({
   backgroundColor,
@@ -12,10 +14,24 @@ const CardWhyMe = ({
   image,
   number,
 }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.33 1"],
+  });
+  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
   return (
     <>
-      <div
-        style={{ backgroundColor: `${backgroundColor}`, color: `${textColor}` }}
+      <motion.div
+        ref={ref}
+        style={{
+          backgroundColor: `${backgroundColor}`,
+          color: `${textColor}`,
+          scale: scaleProgess,
+          opacity: opacityProgess,
+        }}
         className={`w-full h-64 max-sm:h-60 py-12 px-8 rounded-xl relative overflow-hidden flex flex-col justify-center items-start`}
       >
         <div className="space-y-3 pb-6">
@@ -43,7 +59,7 @@ const CardWhyMe = ({
           className="absolute w-full h-auto sm:min-w-28 max-w-32 max-sm:max-w-20 -right-2 -bottom-4"
           height={200}
         />
-      </div>
+      </motion.div>
       <dialog id={`my_modal_${number}`} className="modal p-8">
         <div
           style={{

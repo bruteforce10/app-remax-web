@@ -6,7 +6,6 @@ import Testimonial from "../elements/Testimonial";
 import { MyContext } from "@/lib/AppContext";
 
 const TestimonialSection = ({ testimonis }) => {
-  console.log(testimonis);
   const { page, setValueTesti, setPage, valueTesti } = MyContext();
 
   useEffect(() => {
@@ -22,7 +21,7 @@ const TestimonialSection = ({ testimonis }) => {
   }, [setPage, page, setValueTesti, valueTesti]);
 
   return (
-    <section className=" py-20  ">
+    <section className=" py-20 overflow-hidden ">
       <div className="container max-w-[1250px] space-y-12 mx-auto">
         <div className="flex justify-between items-end">
           <div className="text-start max-w-[45rem] leading-relaxed">
@@ -39,7 +38,11 @@ const TestimonialSection = ({ testimonis }) => {
             height={70}
           />
         </div>
-        <Testimonial {...testimonis[page - 1]} />
+        {testimonis.map(
+          (item, index) =>
+            page - 1 === index && <Testimonial key={index} {...item} />
+        )}
+        {/* <Testimonial {...testimonis[page - 1]} /> */}
       </div>
     </section>
   );

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Montserratt from "@/services/FontPremier";
 import clsx from "clsx";
 import { MyContext } from "@/lib/AppContext";
+import { motion } from "framer-motion";
 
 const Navbar = ({ menus }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,7 +23,12 @@ const Navbar = ({ menus }) => {
   };
 
   return (
-    <div className={clsx(" ", isScrolled && "bg-white/80 backdrop-blur-sm ")}>
+    <motion.div
+      initial={{ opacity: 0, y: -300 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+      className={clsx(" ", isScrolled && "bg-white/80 backdrop-blur-sm ")}
+    >
       <div
         className={`navbar bg-base-100 bg-transparent  mx-auto max-w-[1250px]  container px-8 ${Montserratt.className} `}
       >
@@ -88,7 +94,7 @@ const Navbar = ({ menus }) => {
           </ul>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
