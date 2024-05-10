@@ -20,6 +20,7 @@ const Footer = () => {
               <a
                 href="https://www.instagram.com/remaxindonesia/"
                 target="_blank"
+                aria-label="instagram"
                 className=" cursor-pointer hover:scale-90 transition-all"
               >
                 <FaInstagram className="text-3xl text-white hover:text-blue-soft" />
@@ -27,6 +28,7 @@ const Footer = () => {
               <a
                 href="https://www.facebook.com/remaxindo/?locale=id_ID"
                 target="_blank"
+                aria-label="facebook"
                 className=" cursor-pointer hover:scale-90 transition-all"
               >
                 <TfiFacebook className="text-3xl text-white hover:text-blue-soft" />
@@ -34,6 +36,7 @@ const Footer = () => {
               <a
                 href="https://www.youtube.com/@remaxindonesia6333"
                 target="_blank"
+                aria-label="youtube"
                 className=" cursor-pointer hover:scale-90 transition-all"
               >
                 <FaYoutube className="text-3xl text-white hover:text-blue-soft" />
@@ -42,6 +45,7 @@ const Footer = () => {
           </div>
         </div>
         <iframe
+          title="map lokasi remax indonesia "
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63460.31813942342!2d106.7751501557899!3d-6.228105302634137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f401bd9df853%3A0x16687cf5c1c642c!2sRE%2FMAX%20Indonesia!5e0!3m2!1sen!2sid!4v1715075456450!5m2!1sen!2sid"
           width="300"
           height="150"

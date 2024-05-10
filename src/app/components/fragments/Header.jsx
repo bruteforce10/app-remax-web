@@ -45,10 +45,10 @@ const Header = ({ headers }) => {
           >
             {heading}
           </h1>
-          <h3 className={`${Montserratt.className} text-2xl max-md:text-xl`}>
+          <p className={`${Montserratt.className} text-2xl max-md:text-xl`}>
             {subHeadingText} <br />
             <span className="font-bold ">{subHeadingHighlight}</span>{" "}
-          </h3>
+          </p>
           <div
             className="max-w-xl text-lg max-md:text-md mx-auto "
             dangerouslySetInnerHTML={{ __html: description?.html }}
@@ -82,11 +82,11 @@ const Header = ({ headers }) => {
                 <div
                   className={` rounded-xl w-[200px] h-[200px] flex flex-col items-center justify-center bg-red-remax text-white ${Montserratt.className} space-y-2`}
                 >
-                  <h5
+                  <p
                     className={`text-7xl font-extrabold ${Montserratt.className}`}
                   >
                     115+
-                  </h5>
+                  </p>
                   <p className="text-center leading-[-20px] w-[180px]">
                     Memiliki Cabang Di berbagai negara
                   </p>
@@ -97,11 +97,11 @@ const Header = ({ headers }) => {
                 <div
                   className={` rounded-xl w-[200px] h-[200px] flex flex-col items-center justify-center bg-blue-remax text-white ${Montserratt.className} space-y-2`}
                 >
-                  <h5
+                  <p
                     className={`text-7xl font-extrabold ${Montserratt.className}`}
                   >
                     50+
-                  </h5>
+                  </p>
                   <p className="text-center leading-[-20px] w-[180px]">
                     Tahun Berpengalaman
                   </p>
