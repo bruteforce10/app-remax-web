@@ -59,14 +59,14 @@ const WhyMeSection = ({ whyMes }) => {
                   {...item}
                   backgroundColor={
                     windowWidth <= 986
-                      ? "#5DBBF1"
+                      ? "#245EC2"
                       : index === 1 || index === 2 || index === 5
                       ? "#245EC2"
                       : "#A4D7F4"
                   }
                   textColor={
                     windowWidth <= 986
-                      ? "#0E5075"
+                      ? "#fff"
                       : index === 1 || index === 2 || index === 5
                       ? "white"
                       : "#007DC3"

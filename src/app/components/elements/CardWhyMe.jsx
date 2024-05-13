@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { MdOutlineClose } from "react-icons/md";
+import { Awards, Community, Globe, Remax, Rocket, Technology } from "../icons";
 
 const CardWhyMe = ({
   backgroundColor,
@@ -53,13 +54,28 @@ const CardWhyMe = ({
         >
           Baca Lebih Lanjut
         </button>
-        <Image
+        <div className="absolute w-full h-auto sm:min-w-28 max-w-32 max-sm:max-w-8 max-sm:right-[65px] -right-2 -bottom-4">
+          {number == 1 ? (
+            <Globe color={textColor} />
+          ) : number == 2 ? (
+            <Rocket color={textColor} />
+          ) : number == 3 ? (
+            <Remax color={textColor} />
+          ) : number == 4 ? (
+            <Technology color={textColor} />
+          ) : number == 5 ? (
+            <Community color={textColor} />
+          ) : (
+            <Awards color={textColor} />
+          )}
+        </div>
+        {/* <Image
           src={icon?.url}
           alt="why-me"
           width={200}
           className="absolute w-full h-auto sm:min-w-28 max-w-32 max-sm:max-w-20 -right-2 -bottom-4"
           height={200}
-        />
+        /> */}
       </motion.div>
       <dialog id={`my_modal_${number}`} className="modal p-8">
         <div
