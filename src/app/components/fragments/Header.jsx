@@ -120,7 +120,7 @@ const Header = ({ headers }) => {
           <Image
             src={"/img-header-second.webp"}
             width={500}
-            className="w-full h-auto max-w-[450px] max-lg:max-w-[550px]  object-contain"
+            className="w-full h-auto max-w-[450px] max-lg:max-w-[550px] -mb-3  object-contain"
             height={100}
             alt="img-header"
             priority={true}
