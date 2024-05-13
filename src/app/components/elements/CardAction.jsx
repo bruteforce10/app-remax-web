@@ -19,7 +19,9 @@ const CardAction = ({ call }) => {
           Segera hubungi <span className="font-bold ">{call}</span> dan dapatkan
           konsultasi Waralaba RE/MAX dari ahlinya!
         </p>
-        <Button>Miliki Kantor RE/MAX</Button>
+        <Button onClick={() => window.open("https://remax.paperform.co")}>
+          Miliki Kantor RE/MAX
+        </Button>
       </div>
     </div>
   );

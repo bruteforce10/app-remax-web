@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const Testimonial = ({ job, name, description, avatar }) => {
   const { page, setPage, valueTesti } = MyContext();
+  console.log(avatar);
 
   return (
     <div>
@@ -29,7 +30,7 @@ const Testimonial = ({ job, name, description, avatar }) => {
           className="flex items-center gap-3"
         >
           <Image
-            src={"/avatar.webp"}
+            src={avatar?.url || "/avatar.webp"}
             width={50}
             height={50}
             alt="profile"

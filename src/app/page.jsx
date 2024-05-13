@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import About from "./components/fragments/About";
 import ActionSection from "./components/fragments/ActionSection";
 import BankPartners from "./components/fragments/BankPartners";
@@ -11,7 +12,11 @@ import VideosSection from "./components/fragments/VideosSection";
 import WhyMeSection from "./components/fragments/Whyme";
 
 async function getData() {
-  const res = await fetch("https://app-remax-web.vercel.app/api/data-web", {});
+  const res = await fetch("https://app-remax-web.vercel.app/api/data-web", {
+    cache: "no-store",
+  });
+
+  revalidatePath("/");
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
