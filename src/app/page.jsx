@@ -43,7 +43,7 @@ export default async function Home() {
       <ActionSection {...data.data} />
       <TestimonialSection {...data.data} />
       <div className="w-full bg-[#014389]">
-        <Footer />
+        <Footer {...data.data} />
       </div>
     </main>
   );

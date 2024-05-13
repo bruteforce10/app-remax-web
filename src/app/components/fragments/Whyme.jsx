@@ -92,7 +92,13 @@ const WhyMeSection = ({ whyMes }) => {
           <p className="text-center text-lg max-sm:text-sm leading-relaxed opacity-75">
             dapat mengunduh business proposal lengkap kami melalui dibawah ini{" "}
           </p>
-          <Button onClick={() => window.open("/business-proposal.pdf")}>
+          <Button
+            onClick={() =>
+              window.open(
+                "https://drive.google.com/file/d/1tUADYTIdXTA9Zw2yBN_LhMDCgszqADsp/view?usp=sharing"
+              )
+            }
+          >
             <span>Business Proposal</span>
             <IoDocumentTextOutline className="inline-block ml-2 text-lg" />
           </Button>

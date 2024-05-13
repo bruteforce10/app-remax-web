@@ -4,7 +4,7 @@ import React from "react";
 import { FaInstagram, FaYoutube } from "react-icons/fa6";
 import { TfiFacebook } from "react-icons/tfi";
 
-const Footer = () => {
+const Footer = ({ topNavigations }) => {
   return (
     <footer className="footer max-w-[1250px] container mx-auto p-10 bg-[#014389] text-white  ">
       <aside>
@@ -57,9 +57,9 @@ const Footer = () => {
       </aside>
 
       <nav className="opacity-70">
-        <p>remaxsupport@gmail.com</p>
-        <p className="mb-6">(021) 000-000</p>
-        <p className="max-w-[18rem] ">
+        <p>{topNavigations[0]?.text}</p>
+        <p className="mb-6">{topNavigations[1]?.text}</p>
+        <p className="max-w-[18rem]">
           Equity Tower 17th Floor Jln Jendral Sudirman Kav 52-53 (SCBD) Jakarta,
           Indonesia 12190
         </p>
@@ -67,10 +67,18 @@ const Footer = () => {
       </nav>
       <nav className="opacity-70">
         <h6 className="footer-title">Company</h6>
-        <a className="link link-hover">Home</a>
-        <a className="link link-hover">About Us</a>
-        <a className="link link-hover">Why RE/MAX</a>
-        <a className="link link-hover">Contact</a>
+        <a className="link link-hover" href="#HOME">
+          Home
+        </a>
+        <a className="link link-hover" href="#ABOUT US">
+          About Us
+        </a>
+        <a className="link link-hover" href="#WHY RE/MAX">
+          Why RE/MAX
+        </a>
+        <a className="link link-hover" href="#CONTACT">
+          Contact
+        </a>
       </nav>
     </footer>
   );
