@@ -9,9 +9,9 @@ const NavbarTop = ({ topNavigations }) => {
       initial={{ opacity: 0, y: -300 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
-      className="bg-blue-remax h-10 max-sm:h-16 flex items-center  justify-center"
+      className="bg-blue-remax h-10 max-sm:h-16 flex items-center max-sm:justify-center overflow-hidden"
     >
-      <div className="container mx-auto w-fit max-sm:scale-95 px-8 flex sm:divide-x-2 max-sm:justify-center sm:max-w-[1250px]">
+      <div className="container mx-auto max-sm:w-fit max-sm:scale-95 px-8 flex sm:divide-x-2 max-sm:justify-center sm:max-w-[1250px]">
         {topNavigations.map((item, index) => (
           <IconTextName
             key={index}
