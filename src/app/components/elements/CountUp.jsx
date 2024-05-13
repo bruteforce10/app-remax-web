@@ -12,7 +12,7 @@ const CountUp = ({ initialValue, targetValue, increase }) => {
       if (value < targetValue && anchor === "ABOUT US") {
         setValue((prevValue) => prevValue + increase);
       }
-    }, 1);
+    }, 10);
 
     return () => {
       clearInterval(timer);
