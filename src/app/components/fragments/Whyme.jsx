@@ -47,9 +47,12 @@ const WhyMeSection = ({ whyMes }) => {
       />
       <div className="container max-w-[1250px] mx-auto">
         <div className="text-center space-y-3">
-          <HeadingText text={"Mengapa"} highlight={"Kita"} />
+          <HeadingText text={"Mengapa"} highlight={"Kami"} />
           <div className="w-20 h-0.5 rounded-full bg-blue-remax max-lg:mx-auto max-lg:mt-2 mx-auto"></div>
         </div>
+        <p className="text-center text-lg max-sm:text-sm leading-relaxed opacity-75 mt-4">
+          Mengapa menjadi bagian dari RE/MAX adalah pilihan yang tepat?
+        </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 mt-12 gap-4 justify-center">
           {sortedWhyMes.map(
             (item, index) =>
