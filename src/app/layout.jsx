@@ -4,7 +4,7 @@ import { AppContextProvider } from "@/lib/AppContext";
 import Head from "next/head";
 
 export const metadata = {
-  title: "Franchise RE/MAX Indonesia",
+  title: "Franchise RE/MAX Indonesia | Peluang Bisnis Properti Terbaik",
   description:
     "Jadilah bagian RE/MAX Indonesia dengan join frenchase properti terbaik dan dapatkan dukungan serta keuntungan yang bantu sukseskan transaksi properti Anda.",
 };
