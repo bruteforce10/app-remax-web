@@ -62,35 +62,20 @@ const Header = ({ headers }) => {
         ref={ref}
         className="container px-8 mx-auto py-20 max-md:py-14 max-w-[1250px] items-center grid grid-cols-1 gap-y-12 max-lg:justify-items-center lg:grid-cols-2 justify-items-end "
       >
-        <div className="space-y-8 max-lg:text-center pt-12">
-          <div className="max-sm:space-y-4 space-y-9 ">
-            {headingSplit.map((word, index) => (
-              <motion.h1
-                key={index}
-                initial={{ opacity: 0, x: -200 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.3 }}
-                className={`${Montserratt.className} sm:-my-16 sm:h-24 h-20 -my-10  max-sm:text-5xl text-6xl md:text-7xl font-bold bg-gradient-to-tr from-blue-remax to-[#3f63a2] bg-clip-text text-transparent`}
-              >
-                {word}
-              </motion.h1>
-            ))}
-          </div>
-          <motion.div
-            className="space-y-8"
-            initial="hidden"
-            animate="visible"
-            variants={variantHeader}
+        <div className="space-y-8 max-lg:text-center">
+          <h1
+            className={`${Montserratt.className}  max-sm:text-5xl text-6xl md:text-7xl font-bold bg-gradient-to-tr from-blue-remax to-[#3f63a2] bg-clip-text text-transparent py-2`}
           >
-            <h3 className={`${Montserratt.className} text-2xl max-md:text-xl`}>
-              {subHeadingText} <br />
-              <span className="font-bold ">{subHeadingHighlight}</span>{" "}
-            </h3>
-            <div
-              className="max-w-xl text-lg max-md:text-md mx-auto "
-              dangerouslySetInnerHTML={{ __html: description?.html }}
-            ></div>
-          </motion.div>
+            {heading}
+          </h1>
+          <h3 className={`${Montserratt.className} text-2xl max-md:text-xl`}>
+            {subHeadingText} <br />
+            <span className="font-bold ">{subHeadingHighlight}</span>{" "}
+          </h3>
+          <div
+            className="max-w-xl text-lg max-md:text-md mx-auto "
+            dangerouslySetInnerHTML={{ __html: description?.html }}
+          ></div>
         </div>
         <div className="flex flex-col justify-center items-center gap-4 w-fit max-sm:scale-100 scale-105 origin-bottom ">
           <div className="flex gap-4 justify-center items-end max-lg:hidden">
@@ -120,11 +105,11 @@ const Header = ({ headers }) => {
                 <div
                   className={` rounded-xl w-[200px] h-[200px] flex flex-col items-center justify-center bg-red-remax text-white ${Montserratt.className} space-y-2`}
                 >
-                  <h5
+                  <p
                     className={`text-7xl font-extrabold ${Montserratt.className}`}
                   >
                     115+
-                  </h5>
+                  </p>
                   <p className="text-center leading-[-20px] w-[180px]">
                     Memiliki Cabang Di berbagai negara
                   </p>
@@ -135,11 +120,11 @@ const Header = ({ headers }) => {
                 <div
                   className={` rounded-xl w-[200px] h-[200px] flex flex-col items-center justify-center bg-blue-remax text-white ${Montserratt.className} space-y-2`}
                 >
-                  <h5
+                  <p
                     className={`text-7xl font-extrabold ${Montserratt.className}`}
                   >
                     50+
-                  </h5>
+                  </p>
                   <p className="text-center leading-[-20px] w-[180px]">
                     Tahun Berpengalaman
                   </p>

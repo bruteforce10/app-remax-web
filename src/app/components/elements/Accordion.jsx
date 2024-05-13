@@ -14,7 +14,12 @@ const Accordion = ({ heading, description, idSort }) => {
       onClick={() => setAccordion(idSort)}
       className="collapse collapse-arrow join-item border border-base-300"
     >
+      <label htmlFor="my-accordion-4" className="hidden">
+        accordion{" "}
+      </label>
+
       <input type="radio" name="my-accordion-4" defaultChecked />
+
       <div
         className={`collapse-title text-xl font-medium ${Montserratt.className}`}
       >

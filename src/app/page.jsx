@@ -11,9 +11,7 @@ import VideosSection from "./components/fragments/VideosSection";
 import WhyMeSection from "./components/fragments/Whyme";
 
 async function getData() {
-  const res = await fetch("https://app-remax-web.vercel.app/api/data-web", {
-    cache: "no-store",
-  });
+  const res = await fetch("https://app-remax-web.vercel.app/api/data-web", {});
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
