@@ -3,6 +3,7 @@ import { useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
+import { MdOutlineClose } from "react-icons/md";
 
 const CardWhyMe = ({
   backgroundColor,
@@ -32,11 +33,11 @@ const CardWhyMe = ({
           scale: scaleProgess,
           opacity: opacityProgess,
         }}
-        className={`w-full h-64 max-sm:h-60 py-12 px-8 rounded-xl relative overflow-hidden flex flex-col justify-center items-start`}
+        className={`w-full h-64 max-sm:min-h-[300px] py-12 px-8 rounded-xl relative overflow-hidden flex flex-col justify-center items-start`}
       >
-        <div className="space-y-3 pb-6">
+        <div className="pb-6">
           <h4
-            className={`${Montserratt.className} max-sm:text-xl text-2xl  font-semibold`}
+            className={`${Montserratt.className} max-sm:text-xl text-2xl pb-6 font-semibold`}
           >
             {heading}
           </h4>
@@ -66,8 +67,14 @@ const CardWhyMe = ({
             backgroundColor: `${backgroundColor}`,
             color: `${textColor}`,
           }}
-          className="modal-box w-[1200px] max-sm:w-full  min-h-[500px] flex flex-col justify-between   "
+          className="modal-box w-[1200px] max-sm:w-full  min-h-[500px] flex flex-col justify-between relative  "
         >
+          <MdOutlineClose
+            onClick={() =>
+              document.getElementById(`my_modal_${number}`).close()
+            }
+            className="absolute right-4 text-2xl cursor-pointer top-4"
+          />
           <div className="py-8 px-8 ">
             <h4
               className={`${Montserratt.className} max-sm:text-xl text-2xl pb-4 font-semibold`}

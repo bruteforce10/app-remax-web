@@ -33,23 +33,6 @@ const Header = ({ headers }) => {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
-  const variantHeader = {
-    hidden: {
-      opacity: 0,
-      x: -100,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 2,
-        type: "spring",
-        delay: 0.5,
-        when: "beforeChildren",
-      },
-    },
-  };
-
   return (
     <motion.header
       initial={{ opacity: 0 }}
@@ -68,7 +51,9 @@ const Header = ({ headers }) => {
           >
             {heading}
           </h1>
-          <h3 className={`${Montserratt.className} text-2xl max-md:text-xl`}>
+          <h3
+            className={`${Montserratt.className} max-sm:w-[275px] max-sm:mx-auto text-2xl max-md:text-xl`}
+          >
             {subHeadingText} <br />
             <span className="font-bold ">{subHeadingHighlight}</span>{" "}
           </h3>

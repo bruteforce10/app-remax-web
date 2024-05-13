@@ -12,18 +12,18 @@ const ActionSection = ({ topNavigations }) => {
     <section
       id="CONTACT"
       ref={ref}
-      className="py-16 scroll-mt-[450px] relative  bg-gradient-to-b overflow-hidden from-[#0E54A1] to-[#245EC1]"
+      className="py-16 max-sm:py-10 scroll-mt-[450px] relative  bg-gradient-to-b overflow-hidden from-[#0E54A1] to-[#245EC1]"
     >
       <Image
         src="/globe.webp"
         alt="globe remax"
-        width={900}
-        className="w-full absolute botttom-0  object-contain"
+        width={1000}
+        className="w-full absolute botttom-0 object-cover sm:object-contain max-sm:bottom-[50px] max-sm:w-[450px] max-sm:h-[450px]"
         height={100}
       />
-      <div className="container max-w-[1250px] space-y-12 mx-auto flex flex-col justify-center ">
+      <div className="container max-w-[1250px] sm:space-y-12  mx-auto flex flex-col justify-center items-center">
         <h2
-          className={`${Montserratt.className} text-4xl font-bold text-center text-white`}
+          className={`${Montserratt.className} text-4xl font-bold text-center text-white max-sm:pb-8`}
         >
           Jangan lewatkan kesempatan ini!
         </h2>

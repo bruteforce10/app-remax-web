@@ -57,7 +57,13 @@ const Footer = ({ topNavigations }) => {
       </aside>
 
       <nav className="opacity-70">
-        <p>{topNavigations[0]?.text}</p>
+        {typeof topNavigations[0]?.text == "object" ? (
+          topNavigations[0]?.text.map((item, index) => (
+            <p key={index}>{item}</p>
+          ))
+        ) : (
+          <p>{topNavigations[0]?.text}</p>
+        )}
         <p className="mb-6">{topNavigations[1]?.text}</p>
         <p className="max-w-[18rem]">
           Equity Tower 17th Floor Jln Jendral Sudirman Kav 52-53 (SCBD) Jakarta,

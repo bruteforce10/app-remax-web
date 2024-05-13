@@ -77,7 +77,7 @@ const WhyMeSection = ({ whyMes }) => {
         </div>
         {show && (
           <button
-            className="underline text-xl underline-offset-2 text-[#4586F6] font-medium mx-auto w-full mt-4"
+            className="underline text-xl underline-offset-2 text-[#030303] font-medium mx-auto w-full mt-4"
             onClick={() => setNumber(whyMes.length === number ? 3 : 6)}
           >
             <span>{whyMes.length === number ? "Tutup" : "Lihat Semua"}</span>

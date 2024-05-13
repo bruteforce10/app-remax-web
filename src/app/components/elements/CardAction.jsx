@@ -4,7 +4,7 @@ import Button from "./Button";
 
 const CardAction = ({ call }) => {
   return (
-    <div className="flex gap-4  backdrop-blur-sm  items-start bg-gradient-to-r from-white/30 to-white/10 p-6 rounded-xl border-[1px] border-[#E4E4E4] lg:w-[50rem] mx-auto">
+    <div className="flex gap-4 max-sm:flex-col max-sm:items-center backdrop-blur-sm  items-start bg-gradient-to-r from-white/30 to-white/10 p-6 rounded-xl border-[1px] border-[#E4E4E4] lg:w-[50rem] mx-auto">
       {" "}
       <Image
         src={"/cs-remax.webp"}
@@ -19,9 +19,11 @@ const CardAction = ({ call }) => {
           Segera hubungi <span className="font-bold ">{call}</span> dan dapatkan
           konsultasi Waralaba RE/MAX dari ahlinya!
         </p>
-        <Button onClick={() => window.open("https://remax.paperform.co")}>
-          Miliki Kantor RE/MAX
-        </Button>
+        <div className="max-sm:text-center">
+          <Button onClick={() => window.open("https://remax.paperform.co")}>
+            Miliki Kantor RE/MAX
+          </Button>
+        </div>
       </div>
     </div>
   );

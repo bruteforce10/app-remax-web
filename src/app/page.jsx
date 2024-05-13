@@ -16,11 +16,10 @@ async function getData() {
     cache: "no-store",
   });
 
-  revalidatePath("/");
-
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
+  revalidatePath("/");
 
   return res.json();
 }
