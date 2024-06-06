@@ -2,6 +2,7 @@ import Open_sans from "@/services/FontSecondary";
 import "./globals.css";
 import { AppContextProvider } from "@/lib/AppContext";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "Franchise RE/MAX Indonesia | Peluang Bisnis Properti Terbaik",
@@ -12,6 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Analytics />
       <Head>
         <meta property="og:type" content="website" />
         <meta
