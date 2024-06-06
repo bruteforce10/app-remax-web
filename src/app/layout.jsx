@@ -15,6 +15,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Analytics />
       <Head>
+        <meta
+          name="google-site-verification"
+          content="1k0MLpaNx047RR-LOm_oT-Fe2or7-TY-5ScdL2hPkno"
+        />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
